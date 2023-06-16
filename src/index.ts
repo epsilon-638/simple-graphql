@@ -4,8 +4,6 @@ import { MongoClient } from 'mongodb';
 import { ObjectId } from 'mongodb';
 require('dotenv').config();
 
-console.log(process.env.MONGO_URI, "this");
-
 const client = new MongoClient(
   process.env.MONGO_URI || 'mongodb://localhost:27017',
 );
@@ -78,5 +76,4 @@ const server = new ApolloServer({
 
 startStandaloneServer(server).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
-  console.log(process.env.MONGO_URI, "this")
 });
